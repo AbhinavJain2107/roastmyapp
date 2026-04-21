@@ -1,4 +1,4 @@
-# Roastmyapp
+# roastmyapp
 
 [![npm version](https://img.shields.io/npm/v/roastmyapp.svg)](https://www.npmjs.com/package/roastmyapp)
 
@@ -6,10 +6,10 @@ Run one command and find out why your Next.js app is slow.
 
 NPM: https://www.npmjs.com/package/roastmyapp
 
-## Why Roastmyapp
+## Why roastmyapp
 
 When a Next.js app feels slow, it is usually caused by a handful of repeat issues.
-Roastmyapp gives you a fast, practical report with a score, clear issue groups, and safe fixes for selected cases.
+roastmyapp gives you a fast, practical report with a score, clear issue groups, and safe fixes for selected cases.
 
 ## Quick Start
 
