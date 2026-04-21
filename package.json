@@ -4,11 +4,11 @@
   "description": "CLI to scan Next.js apps for performance issues, score them, and apply safe auto-fixes.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AbhinavJain2107/Roastmyapp.git"
+    "url": "git+https://github.com/AbhinavJain2107/roastmyapp.git"
   },
-  "homepage": "https://github.com/AbhinavJain2107/Roastmyapp#readme",
+  "homepage": "https://github.com/AbhinavJain2107/roastmyapp#readme",
   "bugs": {
-    "url": "https://github.com/AbhinavJain2107/Roastmyapp/issues"
+    "url": "https://github.com/AbhinavJain2107/roastmyapp/issues"
   },
   "type": "module",
   "main": "./dist/cli.js",
