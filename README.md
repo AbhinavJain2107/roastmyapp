@@ -1,5 +1,7 @@
 # Roastmyapp
 
+[![npm version](https://img.shields.io/npm/v/roastmyapp.svg)](https://www.npmjs.com/package/roastmyapp)
+
 Run one command. Find out why your Next.js app is slow.
 
 Now live on npm: https://www.npmjs.com/package/roastmyapp
