@@ -1,7 +1,7 @@
 {
   "name": "roastmyapp",
   "version": "0.1.0",
-  "description": "Run one command. Find out why your Next.js app is slow.",
+  "description": "CLI to scan Next.js apps for performance issues, score them, and apply safe auto-fixes.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AbhinavJain2107/Roastmyapp.git"
@@ -29,8 +29,16 @@
   },
   "keywords": [
     "nextjs",
+    "next.js",
     "performance",
+    "next-performance",
     "cli",
+    "web-performance",
+    "core-web-vitals",
+    "lcp",
+    "image-optimization",
+    "bundle-optimization",
+    "static-analysis",
     "codemod",
     "web-vitals",
     "optimization"
