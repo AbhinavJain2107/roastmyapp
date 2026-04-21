@@ -1,6 +1,8 @@
-# roastmyapp
+# Roastmyapp
 
 Run one command. Find out why your Next.js app is slow.
+
+Now live on npm: https://www.npmjs.com/package/roastmyapp
 
 ## What It Does
 
@@ -9,6 +11,7 @@ Run one command. Find out why your Next.js app is slow.
 - bare `<img>` tags instead of `next/image`
 - likely LCP images missing `priority`
 - full `moment` or `lodash` imports
+- root `react-icons` imports instead of icon-pack imports
 - unnecessary `"use client"` directives
 - external Google Fonts `<link>` tags
 - bare `<script>` tags instead of `next/script`
@@ -22,7 +25,8 @@ This is an MVP, but it is already useful on real Next.js apps:
 
 - AST-backed detection for JSX image issues
 - AST-backed analysis for likely unnecessary `"use client"` directives
-- safer auto-fix behavior that avoids rewriting risky image cases
+- safer image auto-fix behavior that avoids rewriting risky JSX cases
+- safe auto-fixes for selected image, script, and config issues
 - terminal and JSON output for local use and CI workflows
 
 ## Local Development
@@ -57,10 +61,31 @@ Apply safe fixes:
 node dist/cli.js --path /absolute/path/to/your-next-app --fix
 ```
 
+Skip the confirmation prompt (recommended for CI):
+
+```bash
+node dist/cli.js --path /absolute/path/to/your-next-app --fix --yes
+```
+
 Use JSON output:
 
 ```bash
 node dist/cli.js --path /absolute/path/to/your-next-app --json
+```
+
+## Install And Use
+
+Run without installing:
+
+```bash
+npx roastmyapp
+```
+
+Install globally:
+
+```bash
+npm install -g roastmyapp
+roastmyapp --help
 ```
 
 ## Use It On Other Repos
@@ -99,21 +124,25 @@ Or scan a different folder directly:
 roastmyapp --path /absolute/path/to/project
 ```
 
-### 3. Use `npx` After Publishing
+### 3. Use `npx`
 
-Once published to npm, anyone can run:
+Run directly from npm:
 
 ```bash
 npx roastmyapp
 ```
 
-Or:
+Or scan a specific path:
 
 ```bash
 npx roastmyapp --path /absolute/path/to/project
 ```
 
-If the package name changes before publish, replace `roastmyapp` with the final npm package name.
+For reproducible CI runs, you can pin a version:
+
+```bash
+npx roastmyapp@0.1.0 --json
+```
 
 ## CLI Options
 
@@ -162,7 +191,7 @@ npm publish
 This is an MVP CLI. It is useful already, but there is still room to improve:
 
 - move more checks to AST-based analysis
-- expand syntax-aware fixes beyond the current image pipeline
+- expand syntax-aware fixes beyond the current image/script/config auto-fixes
 - add CI-friendly exit codes
 - add more Next.js-specific performance rules
 
@@ -171,6 +200,6 @@ This is an MVP CLI. It is useful already, but there is still room to improve:
 - It is designed for Next.js projects and may skip or warn on non-Next repos.
 - Project detection can still miss unusual monorepo or custom setups.
 - `"use client"` analysis is much better than a simple text scan, but some files still require manual review.
-- Auto-fix is intentionally conservative and will skip risky or ambiguous JSX cases.
+- Auto-fix is intentionally conservative and may skip risky or ambiguous JSX/script/config cases.
 - Some config advice depends on hosting context, such as Vercel handling compression automatically.
 - Generated code, wrappers, and indirect abstractions can hide behavior from static analysis.

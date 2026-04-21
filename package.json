@@ -4,7 +4,7 @@
   "description": "Run one command. Find out why your Next.js app is slow.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/AbhinavJain2107/Roastmyapp.git"
+    "url": "git+https://github.com/AbhinavJain2107/Roastmyapp.git"
   },
   "homepage": "https://github.com/AbhinavJain2107/Roastmyapp#readme",
   "bugs": {
@@ -14,7 +14,7 @@
   "main": "./dist/cli.js",
   "types": "./dist/cli.d.ts",
   "bin": {
-    "roastmyapp": "./dist/cli.js"
+    "roastmyapp": "dist/cli.js"
   },
   "files": [
     "dist",
