@@ -130,6 +130,7 @@ roastmyapp
 - some monorepos or custom setups may not be detected
 - `"use client"` suggestions may require manual review
 - auto-fix is conservative and skips risky cases
+- score reflects rule-based performance findings, not overall project quality
 
 ---
 

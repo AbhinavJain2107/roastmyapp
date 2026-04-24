@@ -31,6 +31,9 @@ export function renderReport(result: ScanResult): string {
   lines.push(`Score: ${colorScore(result.score)} ${COLORS.dim}(${grade})${COLORS.reset}`);
   lines.push(`Scanned ${result.totalFiles} files in ${result.targetPath}`);
   lines.push(`Found ${issueCount} issue${issueCount === 1 ? "" : "s"}`);
+  lines.push(
+    `${COLORS.dim}Note: This score reflects rule-based performance findings, not overall code quality.${COLORS.reset}`
+  );
 
   if (issueCount === 0) {
     lines.push(`${COLORS.green}No performance issues detected by the current ruleset.${COLORS.reset}`);
@@ -64,6 +67,7 @@ export function renderJson(result: ScanResult): string {
   return JSON.stringify(
     {
       ...result,
+      scoreNote: "This score reflects rule-based performance findings, not overall code quality.",
       scannedAt: result.scannedAt.toISOString()
     },
     null,

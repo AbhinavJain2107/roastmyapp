@@ -31,7 +31,7 @@ export function scanProject(context: ProjectContext): ScanResult {
   ];
 
   return {
-    score: scoreIssues(issues),
+    score: scoreIssues(issues, context.sourceFiles.length),
     issues,
     totalFiles: context.sourceFiles.length + context.configFiles.length,
     scannedAt: new Date(),
