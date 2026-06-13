@@ -76,6 +76,7 @@ npx roastmyapp --fix --yes
 - bare `<img>` instead of `next/image`
 - likely LCP images missing `priority`
 - full `lodash`, `moment`, and root `react-icons` imports
+- large inline SVG imports (over 5KB)
 - unnecessary `"use client"` directives
 - external Google Fonts `<link>` usage
 - bare `<script>` instead of `next/script`
