@@ -136,10 +136,9 @@ roastmyapp
 
 ## Contributing
 
-Found an issue or want to improve a rule?
+Contributions are welcome! Please check out our [Contributing Guide](CONTRIBUTING.md) to get started and review our [Code of Conduct](CODE_OF_CONDUCT.md).
 
-Open an issue or PR:
-https://github.com/AbhinavJain2107/roastmyapp
+Found an issue or want to improve a rule? Open an issue or PR on [GitHub](https://github.com/AbhinavJain2107/roastmyapp).
 
 ---
 
