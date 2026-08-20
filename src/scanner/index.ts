@@ -4,6 +4,7 @@ import { fontChecker } from "./fontChecker.js";
 import { imageChecker } from "./imageChecker.js";
 import { importChecker } from "./importChecker.js";
 import { scriptChecker } from "./scriptChecker.js";
+import { svgImportChecker } from "./svgImportChecker.js";
 import { scoreIssues } from "../scorer.js";
 import type { ProjectContext, ScanResult } from "../types.js";
 
@@ -24,6 +25,7 @@ export function scanProject(context: ProjectContext): ScanResult {
   const issues = [
     ...context.sourceFiles.flatMap((file) => imageChecker(file)),
     ...context.sourceFiles.flatMap((file) => importChecker(file)),
+    ...context.sourceFiles.flatMap((file) => svgImportChecker(file)),
     ...context.sourceFiles.flatMap((file) => clientChecker(file)),
     ...context.sourceFiles.flatMap((file) => fontChecker(file)),
     ...context.sourceFiles.flatMap((file) => scriptChecker(file)),

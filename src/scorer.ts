@@ -14,6 +14,7 @@ export function scoreIssues(issues: Issue[], sourceFileCount: number): number {
   const scriptPenalty = Math.min(scaledCount("bare-script-tag") * 5, 15);
   const lodashPenalty = Math.min(scaledCount("lodash-import") * 5, 15);
   const barrelPenalty = Math.min(scaledCount("barrel-import") * 5, 10);
+  const svgImportPenalty = Math.min(scaledCount("no-large-svg-import") * 5, 10);
   const optimizePenalty = Math.min(scaledCount("missing-optimize-package-imports") * 2, 8);
   const configPenalty =
     Math.min(scaledCount("missing-image-config") * 2, 4) +
@@ -29,6 +30,7 @@ export function scoreIssues(issues: Issue[], sourceFileCount: number): number {
     scriptPenalty +
     lodashPenalty +
     barrelPenalty +
+    svgImportPenalty +
     optimizePenalty +
     configPenalty;
 
